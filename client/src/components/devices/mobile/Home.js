@@ -2,6 +2,7 @@ import React from "react";
 import Navigation from "../../static/Navigation";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -98,147 +99,151 @@ const Home = () => {
       >
         <Card variant="outlined">
           <CardContent>
-            <FormControl style={{ width: "120px" }}>
-              <InputLabel id="demo-simple-select-label">Sort</InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="Our Favorites">Our Favorites</MenuItem>
-                <MenuItem value="What's new">What's new</MenuItem>
-                <MenuItem value="Price High to Low">Price High to Low</MenuItem>
-                <MenuItem value="Price Low to High">Price Low to High</MenuItem>
-              </Select>
-            </FormControl>
+            <Grid style={{ display: "flex", flexDirection: "column" }}>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Sort</InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="Our Favorites">Our Favorites</MenuItem>
+                  <MenuItem value="What's new">What's new</MenuItem>
+                  <MenuItem value="Price High to Low">
+                    Price High to Low
+                  </MenuItem>
+                  <MenuItem value="Price Low to High">
+                    Price Low to High
+                  </MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">
+                  Responsible
+                </InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="Recycled">Recycled</MenuItem>
+                  <MenuItem value="Sustinable Materials">
+                    Sustinable Materials
+                  </MenuItem>
+                </Select>
+              </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="Unisex">Unisex</MenuItem>
+                  <MenuItem value="Male">Male</MenuItem>
+                  <MenuItem value="Female">Female</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl style={{ width: "180px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">Responsible</InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="Recycled">Recycled</MenuItem>
-                <MenuItem value="Sustinable Materials">
-                  Sustinable Materials
-                </MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Brand</InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="Addidas">Addidas</MenuItem>
+                  <MenuItem value="Nike">Nike</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl style={{ width: "180px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">Gender</InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="Unisex">Unisex</MenuItem>
-                <MenuItem value="Male">Male</MenuItem>
-                <MenuItem value="Female">Female</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">
+                  Product Type
+                </InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="Bagpacks">Bagpacks</MenuItem>
+                  <MenuItem value="Bags">Bags</MenuItem>
+                  <MenuItem value="Bum Bags">Bum Bags</MenuItem>
+                  <MenuItem value="Face Covering">Face Covering</MenuItem>
+                  <MenuItem value="Gilets">Gilets</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl style={{ width: "180px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">Brand</InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="Addidas">Addidas</MenuItem>
-                <MenuItem value="Nike">Nike</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Size</InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="UK 4">UK 4</MenuItem>
+                  <MenuItem value="UK 4.5">UK 4.5</MenuItem>
+                  <MenuItem value="UK 6">UK 6</MenuItem>
+                  <MenuItem value="UK 7">UK 7</MenuItem>
+                  <MenuItem value="UK 7.5">UK 7.5</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl style={{ width: "180px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">
-                Product Type
-              </InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="Bagpacks">Bagpacks</MenuItem>
-                <MenuItem value="Bags">Bags</MenuItem>
-                <MenuItem value="Bum Bags">Bum Bags</MenuItem>
-                <MenuItem value="Face Covering">Face Covering</MenuItem>
-                <MenuItem value="Gilets">Gilets</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Colors</InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="White">White</MenuItem>
+                  <MenuItem value="Black">Black</MenuItem>
+                  <MenuItem value="Brown">Brown</MenuItem>
+                  <MenuItem value="Red">Red</MenuItem>
+                  <MenuItem value="Green">Green</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl style={{ width: "100px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">Size</InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="UK 4">UK 4</MenuItem>
-                <MenuItem value="UK 4.5">UK 4.5</MenuItem>
-                <MenuItem value="UK 6">UK 6</MenuItem>
-                <MenuItem value="UK 7">UK 7</MenuItem>
-                <MenuItem value="UK 7.5">UK 7.5</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">Body Fits</InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="Main Collection">Main Collection</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl style={{ width: "180px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">Colors</InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="White">White</MenuItem>
-                <MenuItem value="Black">Black</MenuItem>
-                <MenuItem value="Brown">Brown</MenuItem>
-                <MenuItem value="Red">Red</MenuItem>
-                <MenuItem value="Green">Green</MenuItem>
-              </Select>
-            </FormControl>
+              <FormControl>
+                <InputLabel id="demo-simple-select-label">
+                  Sale / New Season
+                </InputLabel>
+                <Select
+                  style={{ color: "#00000" }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="New Season">New Season</MenuItem>
+                  <MenuItem value="Sale">Sale</MenuItem>
+                </Select>
+              </FormControl>
 
-            <FormControl style={{ width: "140px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">Body Fits</InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="Main Collection">Main Collection</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormControl style={{ width: "180px", marginLeft: "10px" }}>
-              <InputLabel id="demo-simple-select-label">
-                Sale / New Season
-              </InputLabel>
-              <Select
-                style={{ color: "#00000" }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-              >
-                <MenuItem value="New Season">New Season</MenuItem>
-                <MenuItem value="Sale">Sale</MenuItem>
-              </Select>
-            </FormControl>
-
-            <FormControl
-              style={{ width: "180px", marginLeft: "14px", marginTop: "4px" }}
-            >
-              <div className={classes.priceroot}>
-                <Typography id="range-slider" gutterBottom>
-                  Price range
-                </Typography>
-                <Slider
-                  value={value}
-                  onChange={handleChange}
-                  valueLabelDisplay="auto"
-                  aria-labelledby="range-slider"
-                  getAriaValueText={valuetext}
-                />
-              </div>
-            </FormControl>
+              <FormControl style={{ marginTop: "15px", padding: "0 4px" }}>
+                <div className={classes.priceroot}>
+                  <Typography id="range-slider" gutterBottom>
+                    Price range
+                  </Typography>
+                  <Slider
+                    value={value}
+                    onChange={handleChange}
+                    valueLabelDisplay="auto"
+                    aria-labelledby="range-slider"
+                    getAriaValueText={valuetext}
+                  />
+                </div>
+              </FormControl>
+            </Grid>
           </CardContent>
         </Card>
       </Collapse>
@@ -247,7 +252,7 @@ const Home = () => {
         <Card className={classes.cardroot} variant="outlined">
           <CardContent>
             <center>
-              <a href="/product">
+              <a href="/product?i=3d8a7a961ff3cd70a7d2ec06cde2bbf66eefb829558d9a2a2662cfc956dd721b">
                 <img
                   style={{ width: "30vh" }}
                   src="https://images-na.ssl-images-amazon.com/images/I/613SYKy-XPL._UL1200_.jpg"
