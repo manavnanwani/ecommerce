@@ -11,6 +11,7 @@ import Wishlist from "./components/WishList";
 import Profile from "./components/devices/desktop/Profile";
 import AdminSignin from "./components/admin/SignIn";
 import AdminDashboard from "./components/admin/Dashboard";
+import ViewProducts from "./components/admin/ViewProducts";
 import useWindowDimensions from "./components/useWindowDimensions";
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
         <Route path="/wishlist" exact component={Wishlist} />
         <Route path="/profile" exact component={Profile} />
         <Route path="/admin" exact component={AdminSignin} />
-        <Route path="/admindashboard" exact component={AdminDashboard} />
+        <Route path="/admindashboard/add" exact component={AdminDashboard} />
+        <Route path="/admindashboard/view" exact component={ViewProducts} />
       </Router>
     </React.Fragment>
   );

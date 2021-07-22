@@ -179,6 +179,7 @@ const Home = ({ location }) => {
         .get(`${API_SERVICE}/api/v1/main/products`)
         .then((response) => {
           setProducts(response.data);
+          console.log(response.data);
         })
         .catch((err) => console.log(err));
     }
