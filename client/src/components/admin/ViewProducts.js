@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -15,14 +15,17 @@ import {
   CardContent,
   Card,
   Grid,
+  Button,
 } from "@material-ui/core";
-import { mainListItems } from "./listItems";
+import { mainListItems } from "./listItems.js";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
 
 import { API_SERVICE, SECRET_KEY } from "../../config/URI";
 import axios from "axios";
+import { DataContext } from "./context/dataContext";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -115,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ViewProducts = () => {
+  const [currentData, setCurrentData] = useContext(DataContext);
   const [message, setMessage] = React.useState("");
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -240,6 +244,23 @@ const ViewProducts = () => {
                       >
                         Rating : {p.rating}
                       </Typography>
+                      <Button
+                        fullWidth
+                        variant="contained"
+                        color="primary"
+                        style={{ marginTop: "10px" }}
+                        component={Link}
+                        to="/admindashboard/add"
+                        onClick={() =>
+                          setCurrentData({
+                            name: `${p.name}`,
+                            category: `${p.category}`,
+                            rating: `${p.rating}`,
+                          })
+                        }
+                      >
+                        Edit
+                      </Button>
                     </CardContent>
                   </Card>
                 </Grid>
