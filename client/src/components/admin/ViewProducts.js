@@ -256,6 +256,7 @@ const ViewProducts = () => {
                             name: `${p.name}`,
                             category: `${p.category}`,
                             rating: `${p.rating}`,
+                            _id: `${p._id}`,
                           })
                         }
                       >

@@ -285,9 +285,46 @@ export default function Dashboard({ location }) {
       .post(`${API_SERVICE}/api/v1/main/addproduct`, uploadData)
       .then((response) => {})
       .catch((err) => console.log(err));
-    setTimeout(function () {
-      window.location.href = "/admindashboard?a=s";
-    }, 1800);
+    // setTimeout(function () {
+    //   window.location.href = "/admindashboard?a=s";
+    // }, 1800);
+  };
+
+  const updateProduct = () => {
+    const _id = currentData._id;
+    var uploadData = {
+      name,
+      url,
+      rating,
+      category,
+      brand,
+      instocks,
+      onsale,
+      freeshipping,
+      freereturn,
+      shipfrom,
+      length,
+      color,
+      blackowned,
+      producttype,
+      origin,
+      texture,
+      basematerial,
+      lacetype,
+      preplucked,
+      bleachedKnots,
+      babyHairs,
+      parting,
+      closureSize,
+      frontalSize,
+      density,
+      downloadUrl,
+      price,
+    };
+    axios
+      .patch(`${API_SERVICE}/api/v1/main/editproduct/${_id}`, uploadData)
+      .then((response) => {})
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -339,7 +376,7 @@ export default function Dashboard({ location }) {
             noWrap
             className={classes.title}
           >
-            Dashboard
+            {currentData.name === undefined ? "Dashboard" : "Edit Product"}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -375,7 +412,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="URL"
                 onChange={(event) => seturl(event.target.value)}
@@ -464,7 +501,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Brand"
                 value={brand}
@@ -524,7 +561,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Ship From"
                 onChange={(event) => setshipfrom(event.target.value)}
@@ -533,7 +570,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Length"
                 onChange={(event) => setlength(event.target.value)}
@@ -542,7 +579,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Color"
                 onChange={(event) => setcolor(event.target.value)}
@@ -551,7 +588,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Price"
                 onChange={(event) => setprice(event.target.value)}
@@ -586,7 +623,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Origin"
                 onChange={(event) => setorigin(event.target.value)}
@@ -645,7 +682,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Bleached Knots"
                 onChange={(event) => setbleachedKnots(event.target.value)}
@@ -654,7 +691,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Baby Hairs"
                 onChange={(event) => setbabyHairs(event.target.value)}
@@ -663,7 +700,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Parting"
                 onChange={(event) => setparting(event.target.value)}
@@ -672,7 +709,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Closure Size"
                 onChange={(event) => setclosureSize(event.target.value)}
@@ -681,7 +718,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Frontal Size"
                 onChange={(event) => setfrontalSize(event.target.value)}
@@ -690,7 +727,7 @@ export default function Dashboard({ location }) {
             <Grid item xs={6}>
               <TextField
                 variant="outlined"
-                required
+                // required
                 fullWidth
                 label="Density"
                 onChange={(event) => setdensity(event.target.value)}
@@ -709,17 +746,33 @@ export default function Dashboard({ location }) {
                 )}
               </Dropzone>
             </center>
-
-            <Button
-              disabled={!bookUploaded}
-              onClick={addProduct}
-              color="secondary"
-              style={{ marginTop: "4vh", height: "8vh" }}
-              variant="contained"
-              fullWidth
-            >
-              Submit
-            </Button>
+            {currentData.name === undefined ? (
+              <Button
+                disabled={!bookUploaded}
+                onClick={addProduct}
+                color="secondary"
+                style={{ marginTop: "4vh", height: "8vh" }}
+                variant="contained"
+                fullWidth
+                component={Link}
+                to="/admindashboard/view"
+              >
+                Submit
+              </Button>
+            ) : (
+              <Button
+                disabled={!bookUploaded}
+                component={Link}
+                to="/admindashboard/view"
+                onClick={updateProduct}
+                color="secondary"
+                style={{ marginTop: "4vh", height: "8vh" }}
+                variant="contained"
+                fullWidth
+              >
+                Update
+              </Button>
+            )}
           </Grid>
         </Container>
       </main>
